@@ -28,10 +28,10 @@ preview
     <span class="label">Seconds</span>
   </div>
 </div>
-Плагин это класс CountdownTimer, экземпляр которого создает новый таймер с настройками.
+<!-- Плагин это класс CountdownTimer, экземпляр которого создает новый таймер с настройками.
 
-new CountdownTimer({ selector: '#timer-1', targetDate: new Date('Jul 17, 2019'), }); Для подсчета
-значений используй следующие готовые формулы, где time - разница между targetDate и текущей датой.
+<!-- new CountdownTimer({ selector: '#timer-1', targetDate: new Date('Jul 17, 2019'), }); Для подсчета -->
+<!-- значений используй следующие готовые формулы, где time - разница между targetDate и текущей датой. -->
 
 /\*
 
