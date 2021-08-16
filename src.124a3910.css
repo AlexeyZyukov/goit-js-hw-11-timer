@@ -1,0 +1,2 @@
+.timer{display:flex;font-size:48px}.field{position:relative;min-width:60px;margin-left:10px;margin-right:10px;padding-bottom:15px;text-align:center}.field:not(:last-child):after{content:":";position:absolute;right:-15px}
+/*# sourceMappingURL=/goit-js-hw-11-timer/src.124a3910.css.map */
