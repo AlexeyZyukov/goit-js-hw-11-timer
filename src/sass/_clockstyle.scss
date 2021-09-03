@@ -1,14 +1,26 @@
+* {
+  text-align: center;
+}
 .timer {
-  display: flex;
-  font-size: 48px;
+  display: inline-block;
+  padding: 10px;
+  margin-top: 100px;
+
+  border: 1px solid #4e4efd;
+  border-radius: 5px;
+  background-color: #f5f5dc;
 }
 .field {
-  position: relative;
+  display: inline-block;
   min-width: 60px;
   margin-left: 10px;
   margin-right: 10px;
   padding-bottom: 15px;
-  text-align: center;
+  font-style: italic;
+  text-decoration: double;
+  border: 1px dashed red;
+  border-radius: 5px;
+  background-color: aquamarine;
 }
 
 .field:not(:last-child)::after {
@@ -17,12 +29,9 @@
   right: -15px;
 }
 
-// .field::before {
-//   content: attr(data-title);
-//   display: block;
-//   position: absolute;
-//   left: 50%;
-//   bottom: 0;
-//   transform: translateX(-50%);
-//   font-size: 14px;
-// }
+.label {
+  display: block;
+}
+.value {
+  font-size: 48px;
+}
