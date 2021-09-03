@@ -1,0 +1,2 @@
+*{text-align:center}.timer{padding:10px;margin-top:100px;border:1px solid #4e4efd;border-radius:5px;background-color:beige}.field,.timer{display:inline-block}.field{min-width:60px;margin-left:10px;margin-right:10px;padding-bottom:15px;font-style:italic;text-decoration:double;border:1px dashed red;border-radius:5px;background-color:#7fffd4}.field:not(:last-child):after{content:":";position:absolute;right:-15px}.label{display:block}.value{font-size:48px}
+/*# sourceMappingURL=/goit-js-hw-11-timer/src.f8524ada.css.map */
