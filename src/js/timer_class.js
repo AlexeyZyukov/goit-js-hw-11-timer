@@ -5,6 +5,7 @@ const refs = {
   clockFaceSecond: document.querySelector('.value[data-value="secs"]'),
   dateInput: document.querySelector('#date')
 };
+const debounce = require('lodash.debounce');
 
 //===Вариант 1 =======
 // class CountdownTimer {
@@ -91,11 +92,28 @@ class CountdownTimer { //===Вариант 2 ===
 
 
 // const newTargerDate = `october 18, 2022`;
+// const timer1 = new CountdownTimer("timer-1", newTargerDate);
 
-refs.dateInput.addEventListener('input', (event) => {
-  const newTargetDate = event.target.value;
+refs.dateInput.addEventListener('input', debounce(renderCounter, 5000));
+
+function renderCounter(event) {
+  // event.preventDefault;
+  let newTargetDate = event.target.value;
   console.log(newTargetDate);
-  return newTargetDate;
-});
-console.log(newTargerDate);
-const timer1 = new CountdownTimer("timer-1", newTargerDate);
+  if (refs.dateInput.value !== event.target.value) {
+    console.log(refs.dateInput.value);
+    clearContent();
+    newTargetDate = event.target.value;
+    console.log(newTargetDate);
+  }
+  // newTargetDate = refs.dateInput.value;
+
+
+  const timer1 = new CountdownTimer("timer-1", newTargetDate);
+  console.log(newTargetDate);
+  return timer1;
+};
+
+function clearContent() {
+  refs.dateInput.value = "";
+}
