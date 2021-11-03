@@ -15,9 +15,9 @@ function timerCount() {
 };
 
 function countDown() {
-        const endDate = new Date("August 18, 2022 00:00:00").getTime();
-        const currentDate = Date.now();
-        const deltaTime = endDate - currentDate;
+    const endDate = new Date("August 18, 2022 00:00:00").getTime();
+    const currentDate = Date.now();
+    const deltaTime = endDate - currentDate;
     //console.log(deltaTime);
     clockFaceDays.textContent = pad(Math.floor(deltaTime / (1000 * 60 * 60 * 24)));
     clockFaceHours.textContent = pad(Math.floor((deltaTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
@@ -31,6 +31,6 @@ function countDown() {
 
 function pad(value) {
     return String(value).padStart(2, '0');
-  }
+}
 timerCount();
 

@@ -46,19 +46,24 @@ const debounce = require('lodash.debounce');
 // };
 
 // new CountdownTimer({
-//   selector: "timer-1",
+//   selector: "timer-2",
 //   targetDate: new Date("December 18, 2021"),
 // });
 //======================================================
 
 class CountdownTimer { //===Вариант 2 ===
   constructor(selector, targetDate) {
+    this.intervalId = null;
     this.selector = selector;
     this.targetDate = targetDate;
   }
 
-  setInt = setInterval(() => {
+  // setInt = setInterval(() => {
+  intervalId = setInterval(() => {
     const nowDate = Date.now();
+
+    console.log(this.targetDate);
+
     const finDate = new Date(this.targetDate); //преобразование даты в миллисекунды
     const deltaTime = finDate - nowDate;
     this.updateClockface(deltaTime);
@@ -85,35 +90,53 @@ class CountdownTimer { //===Вариант 2 ===
       const clockFace = document.getElementById(this.selector);
       clearInterval(this.setInt);
       clockFace.textContent = "Time expired";
-
     }
   }
+
+  // set targetDate(newTargetDate) {
+  //   this.targetDate = newTargetDate;
+  // }
 };
 
-
-// const newTargerDate = `october 18, 2022`;
-// const timer1 = new CountdownTimer("timer-1", newTargerDate);
-
-refs.dateInput.addEventListener('input', debounce(renderCounter, 5000));
-
-function renderCounter(event) {
-  // event.preventDefault;
-  let newTargetDate = event.target.value;
-  console.log(newTargetDate);
-  if (refs.dateInput.value !== event.target.value) {
-    console.log(refs.dateInput.value);
-    clearContent();
-    newTargetDate = event.target.value;
-    console.log(newTargetDate);
-  }
-  // newTargetDate = refs.dateInput.value;
+const newTargerDate1 = `october 18, 2022`;
+new CountdownTimer("timer-1", newTargerDate1);
+// console.dir(timer1);
 
 
-  const timer1 = new CountdownTimer("timer-1", newTargetDate);
-  console.log(newTargetDate);
-  return timer1;
-};
+// const newTargerDate2 = `october 18, 2023`;
+// const timer2 = new CountdownTimer("timer-2", newTargerDate2);
+// console.dir(timer2);
 
-function clearContent() {
-  refs.dateInput.value = "";
-}
+
+
+// refs.dateInput.addEventListener('input', debounce(renderCounter, 3000));
+
+// function renderCounter(event) {
+//   // event.preventDefault;
+//   let newTargetDate = "";
+
+//   if (refs.dateInput.value !== event.target.value) {
+//     console.log(refs.dateInput.value);
+//     clearContent();
+//     newTargetDate = event.target.value;
+//     console.log(newTargetDate);
+//   }
+//   newTargetDate = event.target.value;
+//   console.log(newTargetDate);
+
+//   const timer1 = new CountdownTimer("timer-1", newTargetDate);
+//   console.log(newTargetDate);
+//   return timer1;
+// };
+
+// function clearContent() {
+//   refs.dateInput.value = "";
+//   CountdownTimer.this.TargetDate = "";
+//   console.log(CountdownTimer.TargetDate);
+//   refs.clockFaceDays.textContent = "";
+//   refs.clockFaceHours.textContent = "";
+//   refs.clockFaceMinutes.textContent = "";
+//   refs.clockFaceSecond.textContent = ";"
+// }
+
+// console.log(CountdownTimer.targetDate);
